@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping()
-public class controlador {
+public class PaginaController {
 
-    @GetMapping("/acerca")
+    @GetMapping("/acercaDe")
     public String acercaDe(){
-        return "/acerca";
+        return "acercaDeVista";
     }
 
 }
