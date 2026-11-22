@@ -21,10 +21,11 @@
         <td th:text ="${p.duracion}"></td>
         <td th:text ="${p.copias}"></td>
     </tr>
-<p><a th:href="@{/}">Volver a la portada</a></p>
-<p th:text= "| Esta página se ha visto ${visitasGlobales} veces|"> </p>
-<p th:text= "|Tu has visto esta página ${visitasIndividuales} veces|"> </p>
-
 </table>
+
+    <p><a th:href="@{/}">Volver a la portada</a></p>
+    <p th:text= "| Esta página se ha visto ${visitasGlobales} veces|"> </p>
+    <p th:text= "|Tu has visto esta página ${visitasIndividuales} veces|"> </p>
+
 </body>
 </html>
