@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Página peliculas</title>
+</head>
+<body>
+<h1>Películas</h1>
+
+<table>
+    <tr>
+        <th>Título</th>
+        <th>Año</th>
+        <th>Duración</th>
+        <th>Copias</th>
+    </tr>
+
+    <tr th:each=" p : ${Pelicula}">
+        <td th:text ="${p.}"></td>
+        <td>Fila Columna 2 </td>
+        <td>Fila Columna 3</td>
+        <td>Fila Columna 4</td>
+    </tr>
+
+</table>
+</body>
+</html>
