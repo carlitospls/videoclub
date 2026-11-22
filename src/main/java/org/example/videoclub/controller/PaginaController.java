@@ -35,6 +35,7 @@ public class PaginaController {
     public String listaPeliculas(Model model, HttpSession session){
 
         Integer visitasIndividuales = (Integer) session.getAttribute("visitasIndividuales");
+
         if (visitasIndividuales == null){
             visitasIndividuales = 0;
         }
@@ -44,6 +45,7 @@ public class PaginaController {
 
         model.addAttribute("peliculas", listDePeliculas);
         model.addAttribute("visitasGlobales", visitasGlobales);
+        model.addAttribute("visitasIndividuales", visitasIndividuales);
         session.setAttribute("visitasIndividuales", visitasIndividuales);
 
         return "listaPeliculas";
