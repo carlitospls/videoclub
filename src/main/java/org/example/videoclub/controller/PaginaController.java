@@ -34,7 +34,10 @@ public class PaginaController {
     @GetMapping("/peliculasRuta")
     public String listaPeliculas(Model model, HttpSession session){
 
-        int visitasIndividuales = (int) session.getAttribute("visitasIndividuales");
+        Integer visitasIndividuales = (Integer) session.getAttribute("visitasIndividuales");
+        if (visitasIndividuales == null){
+            visitasIndividuales = 0;
+        }
         visitasIndividuales += 1;
 
         visitasGlobales += 1;
