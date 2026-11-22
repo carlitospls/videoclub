@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pelicula {
-    String titulo;
-    String anio;
-    String duracion;
-    String copias;
+    private String titulo;
+    private Integer anio;
+    private Integer duracion;
+    private Integer copias;
 }

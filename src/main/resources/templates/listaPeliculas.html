@@ -15,11 +15,11 @@
         <th>Copias</th>
     </tr>
 
-    <tr th:each=" p : ${Pelicula}">
-        <td th:text ="${p.}"></td>
-        <td>Fila Columna 2 </td>
-        <td>Fila Columna 3</td>
-        <td>Fila Columna 4</td>
+    <tr th:each=" p : ${peliculas}">
+        <td th:text ="${p.titulo}"></td>
+        <td th:text ="${p.anio}"></td>
+        <td th:text ="${p.duracion}"></td>
+        <td th:text ="${p.copias}"></td>
     </tr>
 
 </table>
