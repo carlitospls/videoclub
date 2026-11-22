@@ -1,5 +1,6 @@
 package org.example.videoclub.controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.example.videoclub.model.Pelicula;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Controller
 public class PaginaController {
+    int visitasGlobales = 0;
 
     Pelicula pelicula1 = new Pelicula("La vida es bella", 1988, 180,2);
     Pelicula pelicula2 = new Pelicula("Hulk", 2006, 130,4);
@@ -30,8 +32,17 @@ public class PaginaController {
         return "portada";
     }
     @GetMapping("/peliculasRuta")
-    public String listaPeliculas(Model model){
+    public String listaPeliculas(Model model, HttpSession session){
+
+        int visitasIndividuales = (int) session.getAttribute("visitasIndividuales");
+        visitasIndividuales += 1;
+
+        visitasGlobales += 1;
+
         model.addAttribute("peliculas", listDePeliculas);
+        model.addAttribute("visitasGlobales", visitasGlobales);
+        session.setAttribute("visitasIndividuales", visitasIndividuales);
+
         return "listaPeliculas";
     }
 
